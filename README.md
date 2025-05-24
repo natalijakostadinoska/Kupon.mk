@@ -1,4 +1,4 @@
-# Kupon.mk (Next.js Coupon Project)
+# Kupon.mk (Next.js Project)
 
 ## Setup
 ```bash
