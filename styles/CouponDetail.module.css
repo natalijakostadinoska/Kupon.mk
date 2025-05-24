@@ -1,0 +1,205 @@
+/* Main container holding left and right columns side by side */
+.mainContainer {
+    display: flex;              /* Flexbox layout */
+    gap: 2rem;                  /* Space between columns */
+    padding: 1rem;              /* Inner spacing */
+    max-width: 1400px;          /* Max width for large screens */
+    margin: 0 auto;             /* Center container horizontally */
+    box-sizing: border-box;     /* Include padding/border in width */
+    flex-wrap: nowrap;          /* Keep columns in one row on large screens */
+}
+
+/* Left and right columns share equal width */
+.leftColumn,
+.rightColumn {
+    flex: 1;                   /* Equal flex grow */
+    display: flex;             /* Flex container */
+    flex-direction: column;    /* Stack children vertically */
+    gap: 1.5rem;               /* Space between children */
+}
+
+/* Breadcrumb navigation bar styling */
+.breadcrumbs {
+    max-width: 1365px;         /* Same max width as main container */
+    margin: 0 auto;            /* Center horizontally */
+    padding: 2rem 0;           /* Vertical padding */
+    font-size: 1.2rem;         /* Text size */
+    color: #00b280;            /* Green color for text */
+    box-sizing: border-box;
+}
+
+/* Row containing logo image and company name */
+.logoNameRow {
+    display: flex;             /* Flex row */
+    align-items: center;       /* Vertically center items */
+    gap: 12px;                 /* Space between logo and text */
+}
+
+/* Coupon/company logo styling */
+.logoImage {
+    width: 60px;
+    height: 63px;
+    object-fit: contain;       /* Preserve aspect ratio */
+    border-radius: 8px;        /* Rounded corners */
+    background: #ffffff;       /* White background */
+    border: 1px solid #e2e2e2; /* Light border */
+    padding: 1px;              /* Inner spacing */
+}
+
+/* Company name text style */
+.companyName {
+    font-size: 20px;
+    font-weight: 700;          /* Bold */
+    color: #003325;            /* Dark green */
+    margin: 0;                 /* Remove default margin */
+}
+
+/* Coupon title styling */
+.couponTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #006649;            /* Medium green */
+    margin: 12px 0 4px 0;      /* Top and bottom margins */
+}
+
+/* Description paragraph styling */
+.description {
+    font-size: 16px;
+    line-height: 1.5;          /* Comfortable line spacing */
+    color: #4a4a4a;            /* Dark gray text */
+}
+
+/* Terms section title */
+.termsTitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 24px;
+    margin-bottom: -20px;
+}
+
+/* Terms text styling */
+.termsText {
+    font-size: 14px;
+    color: #666;               /* Medium gray */
+    line-height: 1.4;
+}
+
+/* Card container for right column content */
+.card {
+    background-color: #fff;    /* White background */
+    border-radius: 12px;       /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); /* Soft shadow */
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;       /* Center children horizontally */
+}
+
+/* Large main image inside card */
+.largeImage {
+    width: 100%;               /* Full width of card */
+    height: 356px;
+    object-fit: cover;         /* Crop/cover image */
+    border-radius: 12px;
+}
+
+/* Container for payment method icons */
+.paymentMethods {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    justify-content: space-between;   /* Center icons horizontally */
+    overflow-x: auto;          /* Horizontal scroll on overflow */
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Individual payment method icon */
+.paymentIcon {
+    flex: 0 0 auto;            /* Prevent shrinking/growing */
+    width: 100px;
+    height: 60px;
+    object-fit: contain;
+    border: 1px solid rgb(187, 186, 186);
+    border-radius: 8px;
+}
+
+/* Dotted horizontal separator line */
+.separator {
+    background-color: white;
+    border-bottom: 3px dotted #c6c6c6; /* Grey dotted line */
+    width: 100%;
+    margin: 12px 0;
+}
+
+/* Buy button styling */
+.buyButton {
+    background-color: #00B280; /* Green background */
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 999px;      /* Pill-shaped */
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;               /* Full width button */
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Buy button hover state */
+.buyButton:hover {
+    background-color: #009966; /* Darker green on hover */
+}
+
+/* Section titles (e.g., "Наслов на купон") */
+.sectionTitle {
+    font-size: 23px;
+    font-weight: 650;
+    font-family: 'Arial', sans-serif;
+    color: #00b280;            /* Consistent green */
+    margin-bottom: -25px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    /* Stack columns vertically */
+    .mainContainer {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* Columns take full width */
+    .leftColumn,
+    .rightColumn {
+        flex: none;
+        width: 100%;
+    }
+
+    /* Adapt large image height */
+    .largeImage {
+        height: auto;
+    }
+
+    /* Payment methods stacked vertically and centered */
+    .paymentMethods {
+        flex-direction: column;
+        align-items: center;
+        overflow-x: visible;    /* Remove horizontal scroll */
+        padding-bottom: 0;
+    }
+
+    /* Payment icons full width, maintaining aspect ratio */
+    .paymentIcon {
+        width: 100%;
+        height: auto;
+        max-height: 100px;
+    }
+
+    /* Slightly smaller buy button on mobile */
+    .buyButton {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
